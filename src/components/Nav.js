@@ -1,17 +1,23 @@
 import React from "react";
 import piggy from "../assets/porco.png";
 
-const Nav = () => {
+const Nav = ({setShowGreased}) => {
 	return (
-		<div className="navWrapper">
+		<nav className="navWrapper">
 			<span className="headerText">Hogwarts</span>
 			<div className="TwirlyPig">
 				<img src={piggy} className="App-logo" alt="piggy" />
 			</div>
-			<span className="normalText">
-				A React App for County Fair Hog Fans
-			</span>
-		</div>
+			<span className="normalText">A React App for County Fair Hog Fans</span>
+			<div>
+				Show Greased: {' '} 
+				<input 
+				defaultChecked= {true} 
+				onChange={(e) => setShowGreased(e.target.checked)}
+				type = "checkbox"
+				/>
+			</div>
+		</nav>
 	);
 };
 
